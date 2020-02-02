@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button >
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button icon-only (click)="onUpdate()">
+        <ion-icon name="create">
+        </ion-icon>
+      </ion-button>
+      <ion-button icon-only (click)="deletePerson()">
+        <ion-icon name="trash">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Details Person</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="person && !isUpdate">
+    <ion-item>
+      <ion-label>
+        Fullname
+      </ion-label>
+      <ion-icon name="person" size="small" slot="start"></ion-icon>
+      {{person.fullname}}
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Email
+      </ion-label>
+      <ion-icon name="at" size="small" slot="start"></ion-icon>
+      {{person.email}}
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Age
+      </ion-label>
+      <ion-icon name="calendar" size="small" slot="start"></ion-icon>
+      {{person.age}}
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Salary
+      </ion-label>
+      <ion-icon name="card" size="small" slot="start"></ion-icon>
+      {{person.salary}}
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="isUpdate && person">
+    <form [formGroup]="form">
+      <ion-item>
+        <ion-input formControlName="fullname" placeholder="Enter your Fullname">
+          <ion-icon name="person"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input formControlName="email" placeholder="Enter your Email">
+          <ion-icon name="at"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input formControlName="age" type="number" placeholder="Enter your Age">
+          <ion-icon name="calendar"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input formControlName="salary" type="number" placeholder="Enter your Salary">
+          <ion-icon name="card"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-button expand="block" fill="clear" style="width: 100%;" (click)="update()">Update</ion-button>
+      </ion-item>
+    </form>
+  </ion-list>
+</ion-content>

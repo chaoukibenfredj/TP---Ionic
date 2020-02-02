@@ -1,9 +1,19 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      List Of Persons
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+  <ion-list *ngIf="utilsService.getPersonList().length>0">
+    <ion-item *ngFor="let person of utilsService.getPersonList()" routerLink="/details-person/{{person.id}}">
+      <ion-label>{{person.fullname}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <div class="empty-list" *ngIf="utilsService.getPersonList().length==0">
+    <ion-icon name="person"></ion-icon>
+    No persons yet !
+  </div>
 
-<ion-content></ion-content>
+</ion-content>
