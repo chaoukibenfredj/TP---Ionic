@@ -10,7 +10,7 @@ export class UtilsService {
         [
             {
                 id: 0,
-                fullname: 'Mohsen Ben Foulen',
+                fullname: 'Mohsen Ben Foula',
                 age: 56,
                 email: 'mohsen@gmail.com',
                 salary: 1000

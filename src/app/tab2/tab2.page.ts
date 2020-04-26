@@ -9,7 +9,7 @@ import { UtilsService } from '../services/utils.service';
 export class Tab2Page {
 
   constructor(
-    protected utilsService: UtilsService
+    public utilsService: UtilsService
   ) {}
 
 }
