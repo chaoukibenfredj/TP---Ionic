@@ -12,7 +12,7 @@ export class UtilsService {
                 id: 0,
                 fullname: 'Mohsen Ben Foula',
                 age: 56,
-                email: 'mohsen@gmail.com',
+                email: 'mohsen@gmaiil.com',
                 salary: 1000
             }
         ];
